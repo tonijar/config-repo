@@ -5,7 +5,7 @@ eureka:
   password: '{cipher}AQBdTe9vjgOqANyfi+Ke5HYmhFJnuvsGJ+8FOqLgdMdFInJkVRzy9XngylNp9KlX2lwPI13jT7ceDjBs9w4B6A15akQTHHP1q9rWwMcLtVCCKGFgvXSgQF+WWIItxBmIDGG4bSgDYZ6XQWl66T84PxjTBygErpmAjn+X2BWdtWtVmjXzpMQMaHGpiyLPoGIQYF4j9ZGpl16Jx79+j6et6LStksrT3WxQuanhZwIkqZ827+2mlUB3kd5ocW7R0vC3JMGVZlGNfqYQwJIhSJ19lrq4gxm/zbGroYonW3QSHTiRlhlvOdovEua/0dCl6+s0iEHYZCBllr7jikEWmS5Px7U2TG8/eQkjR8pUbSN6OE+OI2ZZUCNOT+mi75ZeeN1OtdQ='
   client:
     serviceUrl:
-      defaultZone: http://user:${eureka.password:}@localhost:8761/eureka/
+      defaultZone: http://user:${eureka.password:}@localhost:8762/eureka/
 
 ---
 spring:
@@ -40,7 +40,7 @@ spring:
   profiles: docker
   cloud:
     config:
-      uri: http://${CONFIGSERVER_1_PORT_8888_TCP_ADDR:localhost}:8888
+      uri: http://${CONFIGSERVER_1_PORT_8889_TCP_ADDR:localhost}:8889
 endpoints:
   restart: enabled
 eureka:
@@ -49,5 +49,5 @@ eureka:
     preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
+      defaultZone: http://${EUREKA_1_PORT_8762_TCP_ADDR:localhost}:8762/eureka/
 
